@@ -1,12 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Towfik Omor</title>
-</head>
-<body>
-    <p>Hello Visitors! I will be back soon! If you have an emergency, please email towfikomor@yahoo.com</p>
-</body>
+    <title>Towfik Omor - Marketing Professional</title>
+    <style>
+      /* Set some basic styles for the page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Add styles for the navigation */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #333;
+  height: 60px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+/* Add styles for the header section */
+header {
+  text-align: center;
+  padding: 100px 0;
+  background-color: #F0E68C;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #333;
+}
+
+/* Add styles for the main sections */
+main {
+  padding: 50px 0;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #EEE8AA;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+li {
+  margin: 10px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  flex-basis: calc(33.333% - 20px);
+  text-align: center;
+}
+
+a {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F0E68C;
+}
+/* Add styles for the footer section */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#header">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <header id="header">
+      <h1>Towfik Omor</h1>
+      <h2>Marketing Professional</h2>
+    </header>
+    <main>
+      <section id="about">
+        <h3>About Me</h3>
+        <p>Hi, I'm Towfik Omor. I'm a marketing professional with experience in trade marketing, sales, and brand management. I have a Masters in Public Administration and several professional certificates in marketing and business administration.</p>
+      </section>
+      <section id="experience">
+        <h3>Experience</h3>
+        <article>
+          <h4>Zonal Sales Supervisor at ShopUp, April 2020 - March 2022</h4>
+          <p>As a Zonal Sales Supervisor at ShopUp, I was responsible for managing sales in my region, leading a team of sales executives, and achieving monthly targets. During my time at ShopUp, I exceeded my targets and was recognized for my performance.</p>
+        </article>
+        <article>
+          <h4>Trade Marketing Supervisor at Japan Tobacco International, March 2023 - Continuing</h4>
+          <p>As a Trade Marketing Supervisor at Japan Tobacco International, I'm responsible for developing trade marketing plans, executing brand initiatives, and driving business growth. I've won multiple awards for my performance in the role.</p>
+        </article>
+      </section>
+      <section id="skills">
+        <h3>Skills</h3>
+        <ul>
+          <li>MS Excel</li>
+          <li>Google Sheets</li>
+          <li>Apps Scripts</li>
+          <li>Python</li>
+          <li>Web Design</li>
+          <li>Web Development</li>
+        </ul>
+      </section>
+      <section id="contact">
+        <h3>Contact</h3>
+        <p>Get in touch with me at:</p>
+        <a href="tel:01727737784">01727737784</a>
+        <a href="mailto:towfikomorhanif@gmail.com">towfikomorhanif@gmail.com</a>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Towfik Omor</p>
+    </footer>
+	<script>
+		// Add a smooth scroll effect to anchor links
+$(document).ready(function() {
+  $('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+  });
+});
+
+// Animate the progress bars in the Skills section
+$(document).ready(function() {
+  $('.progress-bar').each(function() {
+    var barValue = $(this).attr('aria-valuenow');
+    $(this).animate({ width: barValue + '%' }, 1000);
+  });
+});
+
+// Animate the numbers in the Counter section
+$(document).ready(function() {
+  $('.counter').each(function() {
+    var endValue = parseInt($(this).text());
+    $(this).prop('Counter', 0).animate({ Counter: endValue }, {
+      duration: 3000,
+      easing: 'swing',
+      step: function(now) {
+        $(this).text(Math.ceil(now));
+      }
+    });
+  });
+});
+
+// Show the responsive menu on small screens
+function showMenu() {
+  var menu = document.getElementById('menu-links');
+  if (menu.style.display === 'block') {
+    menu.style.display = 'none';
+  } else {
+    menu.style.display = 'block';
+  }
+}
+
+	</script>
+  </body>
 </html>
