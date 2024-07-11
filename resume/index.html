@@ -6,63 +6,6 @@
     <title>Towfik Omor</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function collectVisitorData() {
-            var visitorId = 'some-unique-id'; // Generate or retrieve unique ID for the visitor
-            var ipAddress = ''; // Retrieve visitor's IP address (requires backend service or third-party API)
-            var visitDateTime = new Date().toISOString();
-            var pageUrl = window.location.href;
-            var referralSource = document.referrer;
-            var browser = navigator.userAgent;
-            var operatingSystem = navigator.platform;
-            var deviceType = /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
-            var geolocation = ''; // Retrieve visitor's geolocation (requires third-party API)
-            var sessionDuration = 0; // Calculate session duration
-            var pagesVisited = 1; // Increment pages visited count
-            var actionsTaken = []; // Capture specific actions
-            var userAgent = navigator.userAgent;
-            var entryPage = window.location.href;
-            var exitPage = ''; // Capture exit page on unload event
-            var bounceRate = false; // Calculate bounce rate
-
-            // Send data to Google Sheets
-            fetch('https://script.google.com/macros/s/AKfycbzuGTN1mZqje2_5OljQRuLcPKCshhXgBu9N6Z3mhdrrYDAxUnjw4t4EZNg--p5RG4_NAQ/exec', {
-                method: 'POST',
-                body: JSON.stringify({
-                    visitorId: visitorId,
-                    ipAddress: ipAddress,
-                    visitDateTime: visitDateTime,
-                    pageUrl: pageUrl,
-                    referralSource: referralSource,
-                    browser: browser,
-                    operatingSystem: operatingSystem,
-                    deviceType: deviceType,
-                    geolocation: geolocation,
-                    sessionDuration: sessionDuration,
-                    pagesVisited: pagesVisited,
-                    actionsTaken: actionsTaken,
-                    userAgent: userAgent,
-                    entryPage: entryPage,
-                    exitPage: exitPage,
-                    bounceRate: bounceRate
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => console.log('Success:', data))
-            .catch(error => console.error('Error:', error));
-        }
-
-        window.onload = collectVisitorData;
-        window.onbeforeunload = function() {
-            // Update exitPage and sessionDuration before leaving
-            // ...
-        };
-    </script>
-
-    
 </head>
 <body>
     <div class="container mt-4">
