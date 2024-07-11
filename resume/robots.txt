@@ -1,0 +1,9 @@
+# Block all crawlers from the /private/ directory
+User-agent: *
+Disallow: /private/
+
+# Allow all crawlers to access everything else
+Allow: /
+
+# Specify the location of the sitemap
+Sitemap: https://towfikomor.github.io/resume/sitemaps.xml
