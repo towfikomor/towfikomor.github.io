@@ -128,7 +128,7 @@ legend {
 
 /* Additional Styles from First CSS File */
 .welcome-container {
-    background-image: url("https://images.unsplash.com/photo-1487073240288-854ac7f1bb3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80"), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+    background-image: url("img/towfik omor - bg.jpg"), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
