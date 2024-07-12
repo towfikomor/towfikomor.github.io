@@ -1,3 +1,4 @@
+/* General Styles */
 :root {
     --main-color: #45D3D9;
     --secondary-color: #FE9554;
@@ -21,47 +22,113 @@ html, body {
 }
 
 .container {
-    max-width: 80vw;
-    padding-top: 140px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 60px; /* Add space after each section */
 }
 
-.title-text {
-    color: var(--text-color);
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.line {
-    background-color: var(--main-color);
-    height: 4px;
-    width: 200px;
-    border-radius: 5px;
-    margin: 20px auto;
-}
-
-.line1 {
-    margin: 0 auto;
-}
-
-.line2 {
-    margin: 0 auto;
-    width: 50px;
-}
-
+/* Update section titles */
 .section-title {
+    text-align: center;
     margin-bottom: 40px;
 }
 
-.section-body {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.title-text {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--main-color); /* Change text color */
 }
 
+.line {
+    width: 50px;
+    height: 4px;
+    background: var(--main-color); /* Change line color */
+    margin: 10px auto;
+}
+
+.line1 {
+    transform: rotate(45deg);
+}
+
+.line2 {
+    transform: rotate(-45deg);
+}
+
+.section-body {
+    margin-top: 20px;
+    color: var(--text-color); /* Ensure text color is visible */
+}
+
+/* Project category title */
+.category-title {
+    font-size: 2em;
+    color: var(--main-color); /* Change category title color */
+    margin-bottom: 20px; /* Add space between category title and project collection */
+}
+
+/* Project titles */
+.project-title {
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    color: var(--main-color); /* Change project title color */
+}
+
+/* Fieldset and Legend */
+fieldset {
+    border: 1px solid var(--main-color); /* Change fieldset border color */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px; /* Add space between fieldsets */
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--main-color); /* Change legend color */
+    padding: 0 10px;
+    margin-bottom: 20px; /* Add space between category title and fieldset */
+}
+
+/* Project Container */
+.project-container {
+    margin-bottom: 60px; /* Add space between project categories */
+}
+
+.project-collection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Project Item */
+.project-item {
+    flex: 1 1 calc(25% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+.project-tile {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Additional Styles from First CSS File */
 .welcome-container {
-    background-image: url("https://images.unsplash.com/photo-1487073240288-854ac7f1bb3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80"), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)); no-repeat center center/cover;
+    background-image: url("https://images.unsplash.com/photo-1487073240288-854ac7f1bb3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80"), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -77,6 +144,10 @@ html, body {
     font-size: 60px;
     letter-spacing: 4px;
     font-weight: bold;
+    position: absolute; /* Position the text above */
+    top: 50%; /* Align to the center vertically */
+    left: 50%; /* Align to the center horizontally */
+    transform: translate(-50%, -50%); /* Center the text */
 }
 
 .typeText {
@@ -84,7 +155,16 @@ html, body {
     color: var(--main-color);
     margin-top: 20px;
     font-weight: bold;
+    text-align: center; /* Ensure text is centered */
+    position: absolute; /* Position the text above */
+    top: 60%; /* Adjust vertical position as needed */
+    left: 50%; /* Align to the center horizontally */
+    transform: translateX(-50%); /* Center the text horizontally */
 }
+
+
+
+
 
 .showAnim {
     animation: 0.5s cubic-bezier(0, 0.7, 1, 0.3) blinker;
@@ -144,57 +224,6 @@ html, body {
     color: var(--secondary-color);
 }
 
-.project-container {
-    margin-bottom: 30px;
-}
-
-.project-category {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.category-title {
-    font-size: 24px;
-    color: var(--main-color);
-    font-weight: bold;
-}
-
-.project-collection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.project-item {
-    max-width: 300px;
-    flex: 1 1 300px;
-    box-shadow: 0 3px 5px var(--shadow-color);
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #2a2a2a;
-}
-
-.project-tile {
-    text-decoration: none;
-    color: var(--text-color);
-}
-
-.project-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.project-title {
-    text-align: center;
-    color: var(--text-color);
-    background: var(--main-color);
-    padding: 10px;
-    font-size: 18px;
-}
-
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -236,12 +265,28 @@ html, body {
     background: var(--secondary-color);
 }
 
+/* Skills Section */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensures items are evenly distributed */
+    align-items: flex-start; /* Align items at the top */
+    margin-top: 20px; /* Adjust margin for spacing */
+}
+
+.skills-list-container {
+    flex-basis: 45%; /* Adjust width of skills list container */
+}
+
 .skills-list {
     list-style-type: none;
     padding: 0;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
+
 
 .skills-list li {
     background: var(--main-color);
@@ -250,8 +295,35 @@ html, body {
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    cursor: pointer; /* Add pointer cursor on hoverable items */
 }
 
+.skills-list li.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-list li:hover {
+    background: var(--secondary-color); /* Change background color on hover */
+    color: var(--background-color); /* Change text color on hover */
+}
+
+.skills-chart-container {
+    flex-basis: 45%; /* Adjust width of histogram chart container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.skills-chart-container canvas {
+    max-width: 100%;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
     .container {
         max-width: 90vw;
@@ -276,12 +348,20 @@ html, body {
 }
 
 @media (max-width: 480px) {
-    .title-text {
-        font-size: 24px;
+    .project-item {
+        flex: 1 1 100%;
     }
 
-    .line {
-        width: 100px;
+    .title-text {
+        font-size: 2em;
+    }
+
+    .category-title {
+        font-size: 1.5em;
+    }
+
+    legend {
+        font-size: 1.2em;
     }
 
     .textAbove {
