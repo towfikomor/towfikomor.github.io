@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js library -->
     <title>Towfik Omor</title>
 </head>
 <body>
@@ -37,18 +38,20 @@
         <div class="line line2"></div>
       </div>
       <div class="section-body">
-        <p>My name is Towfik Omor, a Full Stack Web Developer, Business Analyst, and Marketing Professional. I have a diverse skill set and a passion for creating innovative solutions.</p>
+        <p>With over five years of expertise in web design and three years in web development, I bring a robust combination of technical skills and creative vision to every project. I specialize in Django and PostgreSQL for seamless web development and utilize HTML, CSS, JavaScript, and Bootstrap for captivating web designs. My experience in SEO and business analysis, combined with proficiency in data visualization using Power BI, ensures comprehensive solutions that drive results. Recognized with Top TMS awards from JTI, I excel in marketing and brand management, ready to deliver top-tier strategies. Let’s create impactful, data-driven, and visually stunning solutions together!</p>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills-section" class="container">
-      <div class="section-title">
-        <h2 class="title-text">My Skills</h2>
-        <div class="line line1"></div>
-        <div class="line line2"></div>
-      </div>
-      <div class="section-body">
+<!-- Skills Section -->
+<section id="skills-section" class="container">
+  <div class="section-title">
+    <h2 class="title-text">My Skills</h2>
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+  </div>
+  <div class="section-body">
+    <div class="skills-container">
+      <div class="skills-list-container">
         <ul class="skills-list">
           <li>Web Development (Django, PostgreSQL)</li>
           <li>Web Design (HTML, CSS, JavaScript, Bootstrap)</li>
@@ -58,71 +61,138 @@
           <li>Marketing and Brand Management</li>
         </ul>
       </div>
-    </section>
+      <div class="skills-chart-container">
+        <canvas id="skillsChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Projects Section -->
     <section id="projects-section" class="container">
-      <div class="section-title">
-        <h2 class="title-text">Previous Projects</h2>
-        <div class="line line1"></div>
-        <div class="line line2"></div>
-      </div>
-      <div class="section-body">
-        <!-- Web Development Projects -->
-        <div class="project-container">
-          <div class="project-category">
-            <h3 class="category-title">Web Development</h3>
-          </div>
-          <div class="project-collection">
-            <div class="project-item project-item-1">
-              <a href="https://codepen.io/freeCodeCamp/full/jOyJzLP" target="_blank" class="project project-tile">
-                <img class="project-image" src="img/portfolio/Web Development/Tribute page/tribute page- aroj ali matabbar.png" title="Tribute to Aroj Ali Matabbar" alt="Tribute to Aroj Ali Matabbar">
-                <p class="project-title">Tribute to Aroj Ali Matabbar</p>
-              </a>
-            </div>
-            <!-- Add more project items as needed -->
-          </div>
+      <div class="container">
+        <div class="section-title">
+          <h2 class="title-text">Previous Projects</h2>
+          <div class="line line1"></div>
+          <div class="line line2"></div>
         </div>
-
-        <!-- Data Visualization Projects -->
-        <div class="project-container">
-          <div class="project-category">
-            <h3 class="category-title">Data Visualization</h3>
-          </div>
-          <fieldset>
-            <legend>Google Sheet Dashboard</legend>
+        <div class="section-body">
+          <!-- Web Development -->
+          <div class="project-container">
+            <div class="project-category">
+              <h3 class="category-title">Web Development</h3>
+            </div>
             <div class="project-collection">
-              <div class="project-item project-item-1">
-                <a href="https://drive.google.com/file/d/1kCH0czgqFisye1bimmUdoIPx7OisV8Vt/view?usp=sharing" target="_blank" class="project project-tile">
-                  <img class="project-image" src="img/portfolio/Data Visualization/Google Sheets/Sales Forecasting.PNG" title="Sales Forecasting" alt="Sales Forecasting">
-                  <p class="project-title">Sales Forecasting</p>
+              <div class="project-item">
+                <a href="https://codepen.io/freeCodeCamp/full/jOyJzLP" target="_blank" class="project project-tile">
+                  <img class="project-image" src="img/portfolio/Web Development/Tribute page/tribute page- aroj ali matabbar.png" title="Tribute to Aroj Ali Matabbar" alt="Tribute to Aroj Ali Matabbar" />
+                  <p class="project-title">Tribute to Aroj Ali Matabbar</p>
                 </a>
               </div>
-              <!-- Add more project items as needed -->
-            </div>
-          </fieldset>
-        </div>
-
-        <!-- Photography Projects -->
-        <div class="project-container">
-          <div class="project-category">
-            <h3 class="category-title">Photography</h3>
-          </div>
-          <fieldset>
-            <legend>Street Photography</legend>
-            <div class="project-collection">
-              <div class="project-item project-item-1">
-                <a href="https://drive.google.com/drive/folders/1ZS5sWIr5ZZuK0iYJ-048M9XG3XQNG_Wy?usp=sharing" target="_blank" class="project project-tile">
-                  <img class="project-image" src="img/portfolio/Photography/Street Photography/IMG_0146.JPG" title="Child Fish Seller" alt="Child Fish Seller">
-                  <p class="project-title">Child Fish Seller</p>
+              <div class="project-item">
+                <a href="https://codepen.io/freeCodeCamp/full/GRWgZPL" target="_blank" class="project project-tile">
+                  <img class="project-image" src="img/portfolio/Web Development/portfolio/portfolio page.png" title="Portfolio Website" alt="Portfolio Website" />
+                  <p class="project-title">Portfolio Website</p>
                 </a>
               </div>
-              <!-- Add more project items as needed -->
+              <div class="project-item">
+                <a href="https://codepen.io/freeCodeCamp/full/zYZYogj" target="_blank" class="project project-tile">
+                  <img class="project-image" src="img/portfolio/Web Development/Tech Solution/Tech Solution - desktop_view 2.png" title="Corporate Website" alt="Corporate Website" />
+                  <p class="project-title">Corporate Website</p>
+                </a>
+              </div>
+              <div class="project-item">
+                <a href="https://codepen.io/freeCodeCamp/full/zYZYogj" target="_blank" class="project project-tile">
+                  <img class="project-image" src="img/portfolio/Web Development/Online Store/Online Store - Desktop View-2.jpg" title="Online Store" alt="Online Store" />
+                  <p class="project-title">Online Store</p>
+                </a>
+              </div>
             </div>
-          </fieldset>
+          </div>
+          <!-- End of Web Development -->
+    
+          <!-- Data Visualization -->
+          <div class="project-container">
+            <div class="project-category">
+              <h3 class="category-title">Data Visualization</h3>
+            </div>
+            <fieldset>
+              <legend>Google Sheet Dashboard</legend>
+              <div class="project-collection">
+                <div class="project-item">
+                  <a href="https://drive.google.com/file/d/1kCH0czgqFisye1bimmUdoIPx7OisV8Vt/view?usp=sharing" target="_blank" class="project project-tile">
+                    <img class="project-image" src="img/portfolio/Data Visualization/Google Sheets/Sales Forecasting.PNG" title="Sales Forecasting" alt="Sales Forecasting" />
+                    <p class="project-title">Sales Forecasting</p>
+                  </a>
+                </div>
+                <div class="project-item">
+                  <a href="https://drive.google.com/file/d/1Fh8ojVOKGkTEvKYrsHclfPrx7yLBUwzq/view?usp=drive_link" target="_blank" class="project project-tile">
+                    <img class="project-image" src="img/portfolio/Data Visualization/Google Sheets/Forbes 2000.PNG" title="Forbes 2000" alt="Forbes 2000" />
+                    <p class="project-title">Forbes 2000</p>
+                  </a>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <!-- End of Data Visualization -->
+    
+          <!-- Photography -->
+          <div class="project-container">
+            <div class="project-category">
+              <h3 class="category-title">Photography</h3>
+            </div>
+            <!-- Street Photography -->
+            <fieldset>
+              <legend>Street Photography</legend>
+              <div class="project-collection">
+                <div class="project-item">
+                  <a href="https://drive.google.com/drive/folders/1ZS5sWIr5ZZuK0iYJ-048M9XG3XQNG_Wy?usp=sharing" target="_blank" class="project project-tile">
+                    <img class="project-image" src="img/portfolio/Photography/Street Photography/IMG_0146.JPG" title="Child Fish Seller" alt="Child Fish Seller" />
+                    <p class="project-title">Child Fish Seller</p>
+                  </a>
+                </div>
+                <div class="project-item">
+                  <a href="https://drive.google.com/drive/folders/1ZS5sWIr5ZZuK0iYJ-048M9XG3XQNG_Wy?usp=sharing" target="_blank" class="project project-tile">
+                    <img class="project-image" src="img/portfolio/Photography/Street Photography/IMG_0076.JPG" title="Street Gossiping" alt="Street Gossiping" />
+                    <p class="project-title">Street Gossiping</p>
+                  </a>
+                </div>
+                <div class="project-item">
+                  <a href="https://drive.google.com/drive/folders/1ZS5sWIr5ZZuK0iYJ-048M9XG3XQNG_Wy?usp=sharing" target="_blank" class="project project-tile">
+                    <img class="project-image" src="img/portfolio/Photography/Street Photography/IMG_0142.JPG" title="Relaxing Man" alt="Relaxing Man" />
+                    <p class="project-title">Relaxing.....</p>
+                  </a>
+                </div>
+                <div class="project-item">
+                  <a href="https://drive.google.com/drive/folders/1ZS5sWIr5ZZuK0iYJ-048M9XG3XQNG_Wy?usp=sharing" target="_blank" class="project project-tile">
+                    <img class="project-image" src="img/portfolio/Photography/Street Photography/IMG_0106.JPG" title="Hawker" alt="Hawker" />
+                    <p class="project-title">Hawker</p>
+                  </a>
+                </div>
+              </div>
+            </fieldset>
+            <!-- End of Street Photography -->
+    
+            <!-- Thematic Photography -->
+            <fieldset>
+              <legend>Thematic Photography</legend>
+              <div class="project-collection">
+                <div class="project-item">
+                  <a href="https://drive.google.com/drive/folders/1Sghdr-94pTbTnbes-su-FjjejcD_Qvel?usp=sharing" target="_blank" class="project project-tile">
+                    <img class="project-image" src="img/portfolio/Photography/thematic/IMG_9786.jpg" title="Bengali Cultural Identity" alt="Bengali Cultural Identity" />
+                    <p class="project-title">Bengali Cultural Identity</p>
+                  </a>
+                </div>
+              </div>
+            </fieldset>
+            <!-- End of Thematic Photography -->
+          </div>
+          <!-- End of Photography -->
         </div>
       </div>
     </section>
+    
 
     <!-- Contact Section -->
     <section id="contact-section" class="container">
@@ -144,54 +214,6 @@
       </div>
     </section>
   </main>
-
-  <script>
-    // Scroll Effect
-    window.onscroll = function() {scrollStyle()};
-    function scrollStyle(){
-      var element = document.getElementById("header");
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll/height)*100;
-      if (winScroll >= window.innerHeight){
-        element.classList.add("test");
-      } else {
-        element.classList.remove("test");
-      }
-    }
-
-    // Typwriter Effect
-    var typeText = document.querySelector(".typeText");
-    var textToBeTypedArr = ["a Full Stack Web Developer", "a Business Analyst", "a Marketing Professional"];
-    var index = 0, isAdding = true, textToBeTypedIndex = 0;
-
-    function playAnim() {
-      setTimeout(function () {
-        typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index);
-        if (isAdding) {
-          if (index > textToBeTypedArr[textToBeTypedIndex].length) {
-            isAdding = false;
-            typeText.classList.add("showAnim");
-            setTimeout(function () {
-              typeText.classList.remove("showAnim");
-              playAnim();
-            }, 2000);
-            return;
-          } else {
-            index++;
-          }
-        } else {
-          if (index === 0) {
-            isAdding = true;
-            textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length;
-          } else {
-            index--;
-          }
-        }
-        playAnim();
-      }, isAdding ? 120 : 60);
-    }
-    playAnim();
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
