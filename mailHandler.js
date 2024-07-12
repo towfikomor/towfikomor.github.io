@@ -3,7 +3,7 @@
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
     const date = new Date().toISOString();  // Current date in ISO format
-    const url = 'https://script.google.com/macros/s/AKfycbzrC2HUYr60SsiAJHTTbJ5M7GAaY1Ijy-uH-WKjKwXLJf1en9l7XnZoV68XTSxuIuXVEw/exec';  // Replace with the URL from the deployment step
+    const url = 'https://script.google.com/macros/s/AKfycbzrX8-jn1Jd9JOK-HBGkI4wC2vg-wgHNpK5bIejmRl4inwdjsDDOQCrSH6npYcrvNPIlw/exec';  // Replace with the URL 
 
     fetch(url, {
       method: 'POST',
