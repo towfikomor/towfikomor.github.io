@@ -356,7 +356,7 @@
         <div class="resume-container">
         <!-- Header Section -->
         <div class="header animate-fade">
-            <img src="http://towfikomor.github.io/test/profile-image.jpg" alt="Profile Image" class="profile-img">
+            <img src="profile-image.jpg" alt="Profile Image" class="profile-img">
             <h1>MD. TOWFIK OMOR HANIF</h1>
             <p class="title">Marketing Professional | Digital Marketer | Data Analyst</p>
         </div>
@@ -689,87 +689,85 @@
         </button>
     </div>
 
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script>
-        // Initialize jsPDF
-        const { jsPDF } = window.jspdf;
-        
         document.addEventListener('DOMContentLoaded', function() {
+            // Animation trigger
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
             // Home button functionality
             document.getElementById('homeBtn').addEventListener('click', function() {
                 window.location.href = 'https://towfikomor.github.io';
             });
             
-            // PDF Download Functionality - Fixed Version
-            document.getElementById('downloadBtn').addEventListener('click', async function() {
+            // Improved PDF download functionality
+            document.getElementById('downloadBtn').addEventListener('click', function() {
                 const element = document.querySelector('.resume-container');
+                const opt = {
+                    margin: [10, 5, 10, 5], // [top, left, bottom, right]
+                    filename: 'MD_TOWFIK_OMOR_HANIF_Resume.pdf',
+                    image: { 
+                        type: 'jpeg', 
+                        quality: 0.98 
+                    },
+                    html2canvas: { 
+                        scale: 2,
+                        useCORS: true,
+                        letterRendering: true,
+                        logging: false,
+                        windowWidth: document.documentElement.scrollWidth,
+                        windowHeight: document.documentElement.scrollHeight
+                    },
+                    jsPDF: { 
+                        unit: 'mm', 
+                        format: 'a4', 
+                        orientation: 'portrait',
+                        compress: true
+                    },
+                    pagebreak: {
+                        mode: ['avoid-all', 'css', 'legacy'],
+                        avoid: ['.section', '.timeline-item']
+                    }
+                };
+                
+                // Show loading indicator
                 const downloadBtn = document.getElementById('downloadBtn');
                 const originalHTML = downloadBtn.innerHTML;
+                downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span class="btn-text">Generating PDF...</span>';
                 
-                try {
-                    // Show loading indicator
-                    downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span class="btn-text">Generating PDF...</span>';
-                    downloadBtn.disabled = true;
-                    
-                    // Create a temporary container
-                    const tempDiv = document.createElement('div');
-                    tempDiv.style.position = 'fixed';
-                    tempDiv.style.left = '-9999px';
-                    tempDiv.style.top = '0';
-                    tempDiv.style.width = '800px';
-                    tempDiv.style.padding = '20px';
-                    tempDiv.style.backgroundColor = 'white';
-                    tempDiv.style.zIndex = '9999';
-                    
-                    // Clone the element
-                    const clonedElement = element.cloneNode(true);
-                    tempDiv.appendChild(clonedElement);
-                    document.body.appendChild(tempDiv);
-                    
-                    // Wait for rendering
-                    await new Promise(resolve => setTimeout(resolve, 1000));
-                    
-                    // Convert to image
-                    const dataUrl = await domtoimage.toPng(tempDiv, {
-                        quality: 1,
-                        width: tempDiv.scrollWidth,
-                        height: tempDiv.scrollHeight,
-                        style: {
-                            'transform': 'none', // Prevent scaling issues
-                            'overflow': 'visible'
-                        }
-                    });
-                    
-                    // Create PDF
-                    const pdf = new jsPDF({
-                        orientation: 'portrait',
-                        unit: 'mm',
-                        format: 'a4'
-                    });
-                    
-                    const imgProps = pdf.getImageProperties(dataUrl);
-                    const pdfWidth = pdf.internal.pageSize.getWidth();
-                    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-                    
-                    pdf.addImage(dataUrl, 'PNG', 0, 0, pdfWidth, pdfHeight);
-                    pdf.save('MD_TOWFIK_OMOR_HANIF_Resume.pdf');
-                    
-                } catch (error) {
-                    console.error('PDF generation failed:', error);
-                    alert('PDF generation failed. Please check console for details.');
-                } finally {
+                // Create a temporary div for PDF generation
+                const tempDiv = document.createElement('div');
+                tempDiv.style.position = 'absolute';
+                tempDiv.style.left = '-9999px';
+                tempDiv.style.width = '210mm'; // A4 width
+                tempDiv.style.padding = '20px';
+                tempDiv.style.backgroundColor = 'white';
+                tempDiv.appendChild(element.cloneNode(true));
+                document.body.appendChild(tempDiv);
+                
+                // Generate PDF
+                html2pdf().set(opt).from(tempDiv).save().then(() => {
                     // Clean up
-                    const tempDiv = document.querySelector('div[style*="left: -9999px"]');
-                    if (tempDiv) document.body.removeChild(tempDiv);
-                    
-                    // Restore button
+                    document.body.removeChild(tempDiv);
                     downloadBtn.innerHTML = originalHTML;
-                    downloadBtn.disabled = false;
-                }
+                }).catch(err => {
+                    console.error('PDF generation error:', err);
+                    document.body.removeChild(tempDiv);
+                    downloadBtn.innerHTML = originalHTML;
+                    alert('Error generating PDF. Please try again.');
+                });
             });
         });
     </script>
