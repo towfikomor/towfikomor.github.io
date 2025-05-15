@@ -1,40 +1,739 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XM4368P42H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XM4368P42H"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-XM4368P42H');
-</script>
-<meta name="google-site-verification" content="UDtd65eQfrrnbYJlMY2_NSOAVsc-dBwuvl9RaMYbTkM" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Md. Towfik Omor Hanif - Marketing Professional</title>
-<meta name="description" content="Md. Towfik Omor Hanif is a marketing professional. Visit the page to learn more.">
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    gtag('config', 'G-XM4368P42H');
+    </script>
+    <meta name="google-site-verification" content="UDtd65eQfrrnbYJlMY2_NSOAVsc-dBwuvl9RaMYbTkM" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Md. Towfik Omor Hanif is a marketing professional. Visit the page to learn more.">
+    <title>MD. TOWFIK OMOR HANIF - Resume</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- html2pdf library for PDF conversion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .header .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .profile-img {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary-color);
+        }
+        
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            width: 20px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            border: 2px solid white;
+        }
+        
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .timeline-title {
+            font-weight: 700;
+            margin: 5px 0;
+            color: var(--primary-color);
+        }
+        
+        .timeline-subtitle {
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-badge {
+            background: var(--light-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            border: 1px solid #ddd;
+        }
+        
+        .award-item {
+            margin-bottom: 20px;
+        }
+        
+        .award-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .award-org {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Floating Action Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .floating-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .floating-btn i {
+            font-size: 1.5rem;
+        }
+        
+        .floating-btn .btn-text {
+            display: none;
+            position: absolute;
+            right: 70px;
+            white-space: nowrap;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .floating-btn:hover .btn-text {
+            display: block;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Print styles for PDF */
+        @media print {
+            body {
+                background-color: white !important;
+                color: black !important;
+                padding: 0 !important;
+            }
+            .resume-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+                border-radius: 0 !important;
+            }
+            .section {
+                page-break-inside: avoid;
+                padding: 20px !important;
+            }
+            .header {
+                background-color: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                padding: 20px !important;
+            }
+            a {
+                text-decoration: none !important;
+                color: #2c3e50 !important;
+            }
+            .floating-buttons {
+                display: none !important;
+            }
+            .profile-img {
+                right: 20px !important;
+                top: 20px !important;
+                width: 100px !important;
+                height: 100px !important;
+            }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .header {
+                text-align: center;
+                padding-bottom: 120px;
+            }
+            
+            .profile-img {
+                position: relative;
+                right: auto;
+                top: auto;
+                margin: 20px auto;
+                display: block;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        @media print {
+    .floating-buttons { display: none; }
+    body { padding: 0; margin: 0; }
+    .resume-container { box-shadow: none; }
+    }
+    </style>
 </head>
 <body>
-    <div class="container mt-4">
-        <div class="text-center mb-3">
-            <h1 class="h4 mb-0">Md. Towfik Omor Hanif</h1>
-            <h2 class="lead mb-1">____Marketing Professional.</h2>
+        <div class="resume-container">
+        <!-- Header Section -->
+        <div class="header animate-fade">
+            <img src="profile-image.jpg" alt="Profile Image" class="profile-img">
+            <h1>MD. TOWFIK OMOR HANIF</h1>
+            <p class="title">Marketing Professional | Digital Marketer | Data Analyst</p>
         </div>
-        <div class="text-center mb-3">
-            <a id="profile-link" href="https://towfikomor.github.io/" target="_self" aria-label="Towfik Omor's Profile">Portfolio</a>
-            <a href="https://docs.google.com/document/d/1OwRopbgJBo----7PZtCstgbf8YSrzJnDVDL9_wLhSDg/export?format=pdf" class="btn btn-primary btn-sm" download="Document.pdf">Download Document (PDF)</a>
-            <p class="lead mb-1">View the document below or click the button to download.</p>
+        
+        <!-- Profile Section -->
+        <div class="section animate-fade delay-1">
+            <h2 class="section-title">PROFILE</h2>
+            <p>To secure the position of Assistant Manager – Marketing at International Office Machines Ltd, where I can apply my 7+ years of marketing experience, combining expertise in corporate and digital marketing, SEO, SEM, and analytics, alongside my Executive MBA in Marketing and professional certifications in Brand Management and Full Stack Digital Marketing. With recent upskilling in <em>Data Analysis with Excel</em>, I aim to drive strategic marketing initiatives, enhance brand visibility, and contribute to IOM's growth and market leadership.</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Rupatail, Barishal Sadar, Barishal</li>
+                        <li><i class="fas fa-envelope"></i> towfikomor@yahoo.com</li>
+                        <li><i class="fas fa-phone"></i> +8801727737784</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="contact-info">
+                        <li><i class="fas fa-birthday-cake"></i> Date of birth: May 1, 1997</li>
+                        <li><i class="fas fa-id-card"></i> Driver's license: BS00535928C10001</li>
+                        <li><i class="fas fa-globe"></i> Website: <a href="https://towfikomor.github.io/resume" target="_blank" style="color: var(--secondary-color);">towfikomor.github.io/resume</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/towfikomor" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/towfikomor" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:towfikomor@yahoo.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://docs.google.com/document/d/1OwRopbgJBo----7PZtCstgbf8YSrzJnDVDL9_wLhSDg/preview?usp=sharing" allowfullscreen></iframe>
+        
+        <!-- Education Section -->
+        <div class="section animate-fade delay-1"> 
+            <h2 class="section-title">EDUCATION</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">2025 - Present</span>
+                    <h3 class="timeline-title">Executive MBA in Marketing</h3>
+                    <p class="timeline-subtitle">University of Barishal</p>
+                    <p>Status: Enrolled</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2019</span>
+                    <h3 class="timeline-title">Bachelor of Social Science in Public Administration</h3>
+                    <p class="timeline-subtitle">University of Barishal</p>
+                    <p>CGPA: 2.74/4.0</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2014</span>
+                    <h3 class="timeline-title">Higher Secondary Certificate</h3>
+                    <p class="timeline-subtitle">Govt. Barishal Model School & College</p>
+                    <p>Humanities GPA: 4.30/5.0</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2012</span>
+                    <h3 class="timeline-title">Secondary School Certificate</h3>
+                    <p class="timeline-subtitle">Govt. Barishal Model School & College</p>
+                    <p>Humanities GPA: 4.13/5.0</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Employment Section -->
+        <div class="section animate-fade delay-2">
+            <h2 class="section-title">EMPLOYMENT</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">Aug 2023 - Present</span>
+                    <h3 class="timeline-title">Regional Trade Marketing Executive</h3>
+                    <p class="timeline-subtitle">Akash Digital TV</p>
+                    <p>The Akash Digital TV is a telecommunications service provider in Bangladesh that offers Direct-to-Home (DTH) services. It is a subsidiary of the BEXIMCO Group, the largest private sector group in Bangladesh. The Regional Trade Marketing Executive position at Akash Digital TV involves developing and executing marketing strategies to promote the company's products and services within a specific geographic region, driving sales and brand awareness.</p>
+                    
+                    <h4 class="mt-3">Key Responsibilities</h4>
+                    <ul>
+                        <li>Planned and executed Trade Loyalty Programs (TLP) to drive retailer engagement, sales, and product distribution, especially through signage-focused outlets.</li>
+                        <li>Managed POSM deployment, on-ground activations, and outdoor campaigns (billboards, shop signs, van miking) to maintain brand consistency and visibility.</li>
+                        <li>Oversaw the ERP system for efficient tracking of dealer database, stock levels, and distribution flow.</li>
+                        <li>Organized and executed regional events, trade shows, and exhibitions, including planning event roadmaps, budgets, and timelines.</li>
+                        <li>Liaised with vendors and media agencies for outdoor media planning, execution, and quality control.</li>
+                        <li>Tracked and analyzed post-event performance, generating insights for ROI optimization and future planning. Conducted retail audits to monitor hygiene and verify monthly incentive disbursement.</li>
+                        <li>Applied integrated ATL, BTL, and TTL strategies to boost brand awareness and targeted conversions.</li>
+                    </ul>
+                    
+                    <h4 class="mt-3">Key Achievement</h4>
+                    <ul>
+                        <li>Launched regional Trade Loyalty Program (TLP) engaging 293 retail shops and 318 signage outlets, resulting in a significant uplift in sales volume from high-performing partners.</li>
+                        <li>Expanded retail coverage by onboarding 340 new dealers and activating 180 unions out of 257 undercover unions across the region, strengthening market penetration.</li>
+                        <li>Successfully led the Faridpur Area Revamp Plan, resulting in a 35% increase in sales volume through optimised dealer engagement, POSM refresh, and focused activations.</li>
+                        <li>Reactivated 70% of previously unproductive dealers through consistent relationship building, strategic placement of marketing support, and personalised follow-ups.</li>
+                        <li>Executed over 25 large-format billboards, 318 signage installations, and deployed POSM materials across 1,800 retail points, ensuring strong brand visibility and uniformity.</li>
+                        <li>Spearheaded the launch of Akash HD Box in the region, orchestrating end-to-end execution including dealer meet-ups, DSR and BP cascading, POSM rollouts, van miking, door-to-door campaigns, kiosk branding, and live TV show activations, creating buzz and driving consumer trials.</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2022 - 2023</span>
+                    <h3 class="timeline-title">Trade Marketing Supervisor</h3>
+                    <p class="timeline-subtitle">Japan Tobacco International (JTI)</p>
+                    <p>Organised Accomplished Trade Marketing Supervisor with over a year of experience at JTI, managed by Talent Centric Ltd. Recognised for exceptional performance with two Q Club Awards in 2022. Skilled in developing and executing effective trade marketing strategies to drive sales growth and enhance brand visibility.</p>
+                    
+                    <h4 class="mt-3">Key Responsibilities</h4>
+                    <ul>
+                        <li>Executed strategic trade marketing plans to boost brand visibility, market share, and product availability across the territory.</li>
+                        <li>Led retail activations, loyalty programs, and field contests to drive sales growth and strengthen retailer engagement.</li>
+                        <li>Managed POSM deployment and ensured high-impact in-store merchandising across all key retail channels.</li>
+                        <li>Organised key brand events, including new product launches, retailer meetings, and activation campaigns, ensuring strong market presence and engagement.</li>
+                        <li>Supervised and trained field teams (SRs, BAS, and CMRs) to ensure consistent execution and full market coverage.</li>
+                        <li>Conducted regular market and competitor analysis to support data-driven strategy adjustments and promotional planning.</li>
+                        <li>Oversaw TLP incentive disbursement, ensuring accurate tracking, timely rewards, and enhanced trade partner motivation.</li>
+                    </ul>
+                    
+                    <h4 class="mt-3">Key Achievement</h4>
+                    <ul>
+                        <li>Boosted territory sales volume by 15% through data-driven trade marketing initiatives and strategic POSM deployment across high-footfall outlets.</li>
+                        <li>Managed and developed a network of 350 Bandhan Partners (TLPs), empowering them to consistently achieve monthly volume and advocacy targets.</li>
+                        <li>Increased market share the 35%–45% within the assigned territory through effective retail strategies, channel development, and competitor displacement.</li>
+                        <li>Expanded market coverage by 85%, successfully penetrating previously under-served or low-performing zones.</li>
+                        <li>Conducted comprehensive market and competitor analysis, contributing actionable insights that shaped national-level promotional campaigns.</li>
+                        <li>Led the successful launch of two new brands, overseeing the end-to-end execution, including event planning, venue and vendor coordination, promotional material development, retail rollout, and post-launch performance tracking.</li>
+                        <li>Organized key engagement events, including a Partner Meetup and multiple trade training sessions for SRs, BAS, and CMRs to align the field force with evolving brand strategies.</li>
+                        <li>Awarded "Top Trade Marketing Supervisor" twice in 2022 for excellence in weighted distribution, volume growth, and retail hygiene maintenance.</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">Apr 2020 – Mar 2022</span>
+                    <h3 class="timeline-title">Zonal Sales Supervisor</h3>
+                    <p class="timeline-subtitle">ShopUp</p>
+                    <p>Sholp is an FMCG company. As a Zonal Sales Supervisor, I lead, monitor, and coordinate the sales & marketing activities of the assigned district.</p>
+                    
+                    <h4 class="mt-3">Key Responsibilities</h4>
+                    <ul>
+                        <li>Drove primary and secondary sales targets across the zone to meet business objectives.</li>
+                        <li>Led, trained, and monitored a team of field sales representatives for performance and productivity.</li>
+                        <li>Assigned, managed, and supported distributor operations to ensure efficient product availability.</li>
+                        <li>Monitored distributor stock levels and financial health to maintain a smooth supply chain.</li>
+                        <li>Built strong relationships with key retail customers to improve service quality and satisfaction.</li>
+                        <li>Prepared and submitted accurate daily, weekly, and monthly sales reports and forecasts.</li>
+                    </ul>
+                    
+                    <h4 class="mt-3">Key Achievements</h4>
+                    <ul>
+                        <li>Achieved 110% of annual sales targets for FY 2021 by optimizing route plans and field execution.</li>
+                        <li>Expanded retail coverage by 30% through onboarding new outlets and optimizing sales territories.</li>
+                        <li>Reduced stockouts by 40% through proactive distributor stock monitoring and demand forecasting. Successfully onboarded and developed 5 new distributors, enhancing distribution depth and reach.</li>
+                        <li>Improved field team performance by conducting monthly training sessions and on-the-job coaching, resulting in a 20% increase in sales team productivity.</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2018 - 2020</span>
+                    <h3 class="timeline-title">Affiliate Marketing Partner</h3>
+                    <p class="timeline-subtitle">Amazon Associates</p>
+                    <p>Amazon Associates is one of the world's largest and most successful affiliate marketing programs, enabling content creators and marketers to monetize their traffic by promoting Amazon products. As an Affiliate Marketing Partner, I was responsible for content-driven performance marketing, SEO optimization, and paid campaign execution to generate affiliate revenue and grow audience engagement.</p>
+                    
+                    <h4 class="mt-3">Key Responsibilities</h4>
+                    <ul>
+                        <li>Developed and published SEO-optimized content to drive organic traffic and increase affiliate conversions. Managed social media platforms to grow audience engagement and drive targeted traffic to affiliate links.</li>
+                        <li>Planned, executed, and optimized paid media campaigns including Facebook Ads, Google Ads, and other PPC initiatives.</li>
+                        <li>Utilized performance tracking tools such as Google Analytics, Google Search Console, and Facebook Ads Manager to monitor KPIs and improve ROI.</li>
+                        <li>Applied data-driven insights to refine targeting strategies, keyword usage, and content planning.</li>
+                        <li>Collaborated on strategic marketing initiatives to enhance brand visibility and drive e-commerce traffic.</li>
+                        <li>Demonstrated strong communication and self-management skills to independently manage affiliate channels and marketing performance.</li>
+                    </ul>
+                    
+                    <h4 class="mt-3">Key Achievements</h4>
+                    <ul>
+                        <li>Successfully built and scaled multiple content funnels that contributed to consistent affiliate income growth.</li>
+                        <li>Increased average monthly traffic by 60% through continuous SEO improvement and strategic content placement.</li>
+                        <li>Achieved strong ROI on PPC campaigns by leveraging A/B testing, retargeting strategies, and ad performance optimization.</li>
+                        <li>Ranked several affiliate content pieces on the first page of Google search results, significantly boosting click-through and conversion rates.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Skills Section -->
+        <div class="section animate-fade delay-2">
+            <h2 class="section-title">SKILLS</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skills-list">
+                        <span class="skill-badge">Power BI</span>
+                        <span class="skill-badge">Google Sheets</span>
+                        <span class="skill-badge">Python Programming</span>
+                        <span class="skill-badge">SEO & Digital Marketing</span>
+                        <span class="skill-badge">Team Management</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skills-list">
+                        <span class="skill-badge">Microsoft Office</span>
+                        <span class="skill-badge">Apps Scripts</span>
+                        <span class="skill-badge">Web Design & Development</span>
+                        <span class="skill-badge">Negotiation</span>
+                        <span class="skill-badge">Reporting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Courses Section -->
+        <div class="section animate-fade delay-3">
+            <h2 class="section-title">COURSES & CERTIFICATIONS</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Certification in Full Stack Digital Marketing</h5>
+                            <p class="card-text">Institute: Ostad<br>Status: Completed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analysis With Excel</h5>
+                            <p class="card-text">Institute: Futurenation<br>Status: Completed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Brand Management: Aligning Business, Brand & Behaviour</h5>
+                            <p class="card-text">Institute: University of London (Via Coursera)<br>Status: Completed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Certification on Strategic Planning (Short Course)</h5>
+                            <p class="card-text">Institute: Oxford Home Study Centre<br>Status: Completed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Post Graduate Diploma in Marketing & Brand Management</h5>
+                            <p class="card-text">Institute: BiMS<br>Status: Completed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">SEO Masterclass Course</h5>
+                            <p class="card-text">Institute: Ghoori Learning<br>Status: Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Awards Section -->
+        <div class="section animate-fade delay-3">
+            <h2 class="section-title">AWARDS</h2>
+            <div class="award-item">
+                <h4 class="award-title">Q CLUB AWARD (Q2' 2022)</h4>
+                <p class="award-org">JAPAN TOBACCO INTERNATIONAL</p>
+                <p>Top TMS: Winner</p>
+            </div>
+            
+            <div class="award-item">
+                <h4 class="award-title">Q CLUB AWARD (Q4' 2022)</h4>
+                <p class="award-org">JAPAN TOBACCO INTERNATIONAL</p>
+                <p>Top TMS: Winner</p>
+            </div>
+        </div>
+        
+        <!-- Extracurricular Section -->
+        <div class="section animate-fade delay-3">
+            <h2 class="section-title">EXTRACURRICULAR ACTIVITIES</h2>
+            <p>President at Badhan Barishal University Unit – (2018–2020)</p>
+        </div>
+        
+        <!-- References Section -->
+        <div class="section animate-fade delay-3">
+            <h2 class="section-title">REFERENCES</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">JULFIKAR AL NAHIAN (ROZEN)</h5>
+                            <p class="card-text">Head of Merchant Business, City Bank, Dhaka<br>
+                            +8801732535352<br>
+                            janroze@yahoo.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">MD SHIRAJIS SHADIK</h5>
+                            <p class="card-text">Assistant Professor, University of Barishal, Barishal<br>
+                            +880172153354<br>
+                            shirajisshadik@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">MUHAMMAD MUNTASIR</h5>
+                            <p class="card-text">AGM, Market Communications, AKASH Digital TV, Dhaka<br>
+                            +8801700710891<br>
+                            muhammadmuntasir08@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <button class="floating-btn" id="homeBtn" title="Go to Home">
+            <i class="fas fa-home"></i>
+            <span class="btn-text">Home</span>
+        </button>
+        <button class="floating-btn" id="downloadBtn" title="Download as PDF">
+            <i class="fas fa-print"></i>
+            <span class="btn-text">Save PDF</span>
+        </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation trigger
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Home button functionality
+            document.getElementById('homeBtn').addEventListener('click', function() {
+                window.location.href = 'https://towfikomor.github.io';
+            });
+            
+            // Improved PDF download functionality
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+              // Simply open print dialog - user can "Save as PDF"
+             window.print();
+            });
+        });
+    </script>
 </body>
 </html>
